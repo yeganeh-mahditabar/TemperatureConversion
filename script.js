@@ -12,7 +12,8 @@ function convert() {
     console.log('convert')
 }
 function reset() {
-    console.log('reset')
+    result.innerHTML = '';
+    converter.value = '';
 }
 function swap() {
     if(firstValue.innerHTML === '°C') {
