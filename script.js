@@ -9,7 +9,20 @@ const resetButton = $.querySelector('.resetButton');
 const changeButton = $.querySelector('.changeButton');
 
 function convert() {
-    console.log('convert')
+    if(converter.value === '') {
+        result.innerHTML = 'insert correct value';
+        result.style.color = '#993300';
+    } else {
+        if(firstValue.innerHTML === '°C') {
+            let resultValue = (converter.value * 1.8) + 32;
+            result.style.color = 'rgb(255, 255, 102)';
+            result.innerHTML = converter.value + '°C To ' + resultValue + '°F';
+        } else {
+            let resultValue = (converter.value -32) * 5 / 9;
+            result.style.color = 'rgb(255, 255, 102)';
+            result.innerHTML = converter.value + '°F To ' + resultValue.toFixed(2) + '°C';
+        }
+    }
 }
 function reset() {
     result.innerHTML = '';
